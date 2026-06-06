@@ -1,8 +1,0 @@
-[about.html](https://github.com/user-attachments/files/28659295/about.html)
-[academy.html](https://github.com/user-attachments/files/28659296/academy.html)
-[sim-racing.html](https://github.com/user-attachments/files/28659302/sim-racing.html)
-[karting-team.html](https://github.com/user-attachments/files/28659301/karting-team.html)
-[index.html](https://github.com/user-attachments/files/28659300/index.html)
-[fitness.html](https://github.com/user-attachments/files/28659299/fitness.html)
-[community.html](https://github.com/user-attachments/files/28659298/community.html)
-[career-path.html](https://github.com/user-attachments/files/28659297/career-path.html)
