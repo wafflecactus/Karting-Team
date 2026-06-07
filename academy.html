@@ -66,7 +66,7 @@
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Focus on Safety &amp; Fundamentals</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Skill Progression Path</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Racing Mindset &amp; Discipline</li></ul>
-          <a href="contact.html?type=info" class="btn btn-red">Learn More</a>
+          <button type="button" class="btn btn-red detail-toggle" data-detail="acad-kids"><span class="tgl-more">Learn More</span><span class="tgl-less">Show Less</span></button>
         </div>
         <div class="pcard-media"><img src="assets/img/academy.jpg" alt="Kids academy kart"></div>
       </article>
@@ -79,13 +79,19 @@
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Race Craft &amp; Technique</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Personalized Coaching</li>
 <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Track Sessions &amp; Practice</li></ul>
-          <a href="contact.html?type=info" class="btn btn-red">Learn More</a>
+          <button type="button" class="btn btn-red detail-toggle" data-detail="acad-adult"><span class="tgl-more">Learn More</span><span class="tgl-less">Show Less</span></button>
         </div>
         <div class="pcard-media"><img src="assets/img/kart-hero.jpg" alt="Adult academy kart"></div>
       </article>
     </div>
   </div>
 </section>
+
+
+<section style="padding:0"><div class="wrap">
+<div class="detail" id="acad-kids"><div class="detail-inner"><div class="detail-box"><h3>Inside The Kids Academy</h3><p>Our Kids Academy (ages 6–15) is a safe, fun and structured environment where young drivers fall in love with racing while building real skills. Sessions are grouped by age and ability so every child progresses at their own pace.</p><ul class="dl"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Small groups with a high coach-to-driver ratio</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Full safety gear and well-maintained karts provided</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Progressive skill levels — from first laps to club racing</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Fundamentals: car control, racing line and track awareness</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Confidence, discipline and sportsmanship from day one</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>A clear pathway into the EZ Racing Karting Team</li></ul><a href="contact.html?type=booking" class="btn btn-red">Book A Taster Session</a></div></div></div>
+<div class="detail" id="acad-adult"><div class="detail-inner"><div class="detail-box"><h3>Inside The Adult Academy</h3><p>The Adult Academy (16+) is built for everyone from complete beginners to club racers looking to sharpen up. Flexible sessions fit around your schedule, with personalised coaching and real data feedback.</p><ul class="dl"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Beginner, intermediate and advanced tracks</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>One-to-one and small-group coaching options</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Race craft: starts, overtaking, defending and strategy</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Telemetry and video review to find lap time</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Practice days and arrive-and-drive options</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>A clear route into competitive karting and beyond</li></ul><a href="contact.html?type=booking" class="btn btn-red">Book An Adult Session</a></div></div></div>
+</div></section>
 
 <!-- WHAT YOU WILL LEARN -->
 <section class="section tight">
@@ -192,5 +198,6 @@ const io=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting)
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>el.classList.add('in')),2500);
 </script>
+<script>document.querySelectorAll('[data-detail]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();var p=document.getElementById(b.dataset.detail);if(!p)return;var open=p.classList.toggle('open');b.classList.toggle('is-open',open);if(open)setTimeout(function(){p.scrollIntoView({behavior:'smooth',block:'center'});},120);});});</script>
 </body>
 </html>

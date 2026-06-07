@@ -70,7 +70,7 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Braking &amp; race craft</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Consistency building</li>
           </ul>
-          <a href="contact.html?type=info" class="link-red">Learn More <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <button type="button" class="link-red detail-toggle" data-detail="sim-train"><span class="tgl-more">Learn More</span><span class="tgl-less">Show Less</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
       </article>
 
@@ -115,12 +115,18 @@
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Immersive experience</li>
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Comfort &amp; community</li>
           </ul>
-          <a href="contact.html?type=visit" class="link-red">Visit The Facility <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <button type="button" class="link-red detail-toggle" data-detail="sim-facility"><span class="tgl-more">About The Facility</span><span class="tgl-less">Show Less</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </div>
       </article>
     </div>
   </div>
 </section>
+
+
+<section style="padding:0"><div class="wrap">
+<div class="detail" id="sim-train"><div class="detail-inner"><div class="detail-box"><h3>Why Sim Racing Works</h3><p>Sim racing is one of the most effective and lowest-cost ways to become a faster, smarter driver. The skills transfer directly to the track, and you can train any day, in any weather.</p><ul class="dl"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Build muscle memory for braking points and racing lines</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Learn new circuits before you ever set foot on them</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Train consistently for a fraction of real-track costs</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Real physics and force feedback that mirror a real car</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Structured sessions with telemetry and coach feedback</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>A proven pathway from sim to real-world racing</li></ul><a href="contact.html?type=join" class="btn btn-red">Start Sim Training</a></div></div></div>
+<div class="detail" id="sim-facility"><div class="detail-inner"><div class="detail-box"><h3>Inside Our Sim Facility</h3><p>Train in a purpose-built sim racing centre with professional-grade equipment in a focused, competition-ready environment.</p><ul class="dl"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>8 professional simulator stations</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Direct-drive wheels and load-cell pedals</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Triple-screen and motion-rig setups</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Multi-platform: iRacing, Assetto Corsa &amp; rFactor 2</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Live timing, telemetry and replay analysis</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l5 5L20 6"/></svg>Comfortable lounge and community space for members</li></ul><a href="contact.html?type=visit" class="btn btn-red">Book A Visit</a></div></div></div>
+</div></section>
 
 <!-- COMMUNITY + LEAGUES -->
 <section class="section tight">
@@ -236,5 +242,6 @@ const io=new IntersectionObserver((es)=>{es.forEach((e,i)=>{if(e.isIntersecting)
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 setTimeout(()=>document.querySelectorAll('.reveal:not(.in)').forEach(el=>el.classList.add('in')),2500);
 </script>
+<script>document.querySelectorAll('[data-detail]').forEach(function(b){b.addEventListener('click',function(e){e.preventDefault();var p=document.getElementById(b.dataset.detail);if(!p)return;var open=p.classList.toggle('open');b.classList.toggle('is-open',open);if(open)setTimeout(function(){p.scrollIntoView({behavior:'smooth',block:'center'});},120);});});</script>
 </body>
 </html>
